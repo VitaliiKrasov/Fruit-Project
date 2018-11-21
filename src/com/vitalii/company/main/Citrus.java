@@ -29,16 +29,17 @@ public class Citrus extends Fruit{
         this.setGramsVitaminС(Integer.parseInt(reader.readLine()));
     }
 
-    @Override
-    public String toString() {
-        return "Citrus{" +
-                "name=" + getName() +
-                ", color=" + getColor() +
-                ", gramsVitaminС=" + gramsVitaminС +
-                '}';
-    }
 
     public void setGramsVitaminС(int gramsVitaminС) {
         this.gramsVitaminС = gramsVitaminС;
+    }
+
+    @Override
+    public String toString() {
+        return "Citrus{" +
+                "name = '" + getName() + '\'' +
+                ", color = '" + getColor() + '\'' +
+                ", contains vitamin C = " + gramsVitaminС + " gramms" +
+                '}';
     }
 }
