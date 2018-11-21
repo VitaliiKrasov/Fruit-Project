@@ -1,5 +1,7 @@
 package com.vitalii.company.main;
 
+import java.io.IOException;
+
 /**
  * 1) Утворити клас Фрукт, який містить:
  * - поля назва та колір,
@@ -25,8 +27,9 @@ package com.vitalii.company.main;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Citrus citrus = new Citrus("lemon", "Red", 20);
-        System.out.println(citrus);
+    public static void main(String[] args) throws IOException {
+        Citrus citrus = new Citrus();
+        citrus.input();
+        citrus.print();
     }
 }

@@ -1,6 +1,10 @@
 package com.vitalii.company.main;
 
-public abstract class Fruit {
+import java.io.IOException;
+
+import static com.vitalii.company.main.Reader.reader;
+
+public class Fruit {
     private String name;
     private Color color;
 
@@ -9,8 +13,18 @@ public abstract class Fruit {
         setColor(color);
     }
 
-    public void input() {}
-    public void print() {}
+    public Fruit() {
+    }
+
+    public void input() throws IOException {
+        System.out.println("Enter fruit name:");
+        this.setName(reader.readLine());
+        System.out.println("Enter fruit color:");
+        this.setColor(reader.readLine());
+    }
+    public void print() {
+        System.out.println(this);
+    }
 
 
     public String getName() {
