@@ -31,5 +31,6 @@ public class Main {
         Citrus citrus = new Citrus();
         citrus.input();
         citrus.print();
+        System.out.println(citrus.getColor() == Color.YELLOW);
     }
 }
