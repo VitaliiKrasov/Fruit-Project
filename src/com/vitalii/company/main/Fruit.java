@@ -1,12 +1,12 @@
-package com.vitalii.company;
+package com.vitalii.company.main;
 
 public abstract class Fruit {
     private String name;
     private Color color;
 
-    public Fruit(String name, Color color) {
-        this.name = name;
-        this.color = color;
+    public Fruit(String name, String color) {
+        setName(name);
+        setColor(color);
     }
 
     public void input() {}
@@ -25,17 +25,15 @@ public abstract class Fruit {
         return color;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public void setColor(String color) {
+        this.color = Color.valueOf(color.toUpperCase());
     }
 
     @Override
     public String toString() {
-        return super.toString();
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
+        return "Fruit{" +
+                "name='" + name + '\'' +
+                ", color=" + color +
+                '}';
     }
 }

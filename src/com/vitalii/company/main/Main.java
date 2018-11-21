@@ -1,4 +1,4 @@
-package com.vitalii.company;
+package com.vitalii.company.main;
 
 /**
  * 1) Утворити клас Фрукт, який містить:
@@ -6,13 +6,13 @@ package com.vitalii.company;
  * - визначити конструктор з параметрами,
  * - методи input() та print(), для зчитування даних з консолі та виведення даних на консоль,
  * а також перевантажити варіанти введення-виведення з файлу.
- * - властивості для полів,
+ * - ? властивості для полів,
  * - перевизначити метод toString().
  *
  * 2) Утворити похідний від нього клас Цитрус, який має:
  * - поле - вміст вітаміну С в грамах,
  * - конструктор з параметрами,
- * - властивість,
+ * - ? властивість,
  * - перевизначені методи input() та print().
  *
  * 3) Утворити List фруктів і додати до нього 5 різних фруктів і цитрусів.
@@ -26,6 +26,7 @@ package com.vitalii.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Citrus citrus = new Citrus("lemon", "Red", 20);
+        System.out.println(citrus);
     }
 }
