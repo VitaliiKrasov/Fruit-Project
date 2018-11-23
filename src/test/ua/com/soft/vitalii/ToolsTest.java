@@ -1,6 +1,7 @@
 package test.ua.com.soft.vitalii;
 
 //import main.Citrus;
+import main.ua.com.soft.vitalii.Citrus;
 import main.ua.com.soft.vitalii.Color;
 import main.ua.com.soft.vitalii.Fruit;
 import org.testng.annotations.BeforeMethod;
@@ -19,8 +20,8 @@ public class ToolsTest {
         List<Fruit> fruits = new LinkedList<Fruit>();
         fruits.add(new Fruit("Apple", Color.yellow));
         fruits.add(new Fruit("Apple", Color.red));
-//        fruits.add(new Citrus("Lemon", Color.yellow, 20));
-//        fruits.add(new Citrus("Lime", Color.green, 15));
+        fruits.add(new Citrus("Lemon", Color.yellow, 20));
+        fruits.add(new Citrus("Lime", Color.green, 15));
         return fruits;
     }
 
@@ -31,7 +32,7 @@ public class ToolsTest {
 
         List<Fruit> expected = new LinkedList<Fruit>();
         expected.add(new Fruit("Apple", Color.yellow));
-//        expected.add(new Citrus("Lemon", Color.yellow, 20));
+        expected.add(new Citrus("Lemon", Color.yellow, 20));
 //        act
         List<Fruit> actual = getByColor(fruits, Color.yellow);
 //        assert
@@ -45,13 +46,11 @@ public class ToolsTest {
         List<Fruit> expected = new LinkedList<Fruit>();
         expected.add(new Fruit("Apple", Color.yellow));
         expected.add(new Fruit("Apple", Color.red));
-//        expected.add(new Citrus("Lemon", Color.yellow, 20));
-//        expected.add(new Citrus("Lime", Color.green, 15));
+        expected.add(new Citrus("Lemon", Color.yellow, 20));
+        expected.add(new Citrus("Lime", Color.green, 15));
 //        act
         sortByName(fruits);
 //        assert
-        for (int i = 0; i < fruits.size(); i++) {
-            assertEquals(fruits.get(i), expected.get(i));
-        }
+        assertEquals(fruits, expected);
     }
 }
