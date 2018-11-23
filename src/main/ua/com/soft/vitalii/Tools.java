@@ -1,4 +1,4 @@
-package com.vitalii.company.main;
+package main.ua.com.soft.vitalii;
 
 import java.util.*;
 
