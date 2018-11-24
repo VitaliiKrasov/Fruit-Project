@@ -1,18 +1,16 @@
 package main.ua.com.soft.vitalii;
 
-import main.ua.com.soft.vitalii.Color;
-import main.ua.com.soft.vitalii.Fruit;
-
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Objects;
 
 public class Citrus extends Fruit {
-    private int gramsVitaminС;
+    private int containsViataminC;
 
     public Citrus(String name, Color color, int vitaminC) {
         super(name, color);
-        setGramsVitaminС(vitaminC);
+        this.containsViataminC = vitaminC;
     }
 
     public Citrus() {
@@ -23,16 +21,16 @@ public class Citrus extends Fruit {
         String[] input = br.readLine().trim().split("\\s+");
         setName(input[0]);
         setColor(Color.valueOf(input[1].toLowerCase()));
-        setGramsVitaminС(Integer.parseInt(input[2]));
+        setContainsViataminC(Integer.parseInt(input[2]));
     }
 
-    public void setGramsVitaminС(int gramsVitaminС) {
-        this.gramsVitaminС = gramsVitaminС;
+    public void setContainsViataminC(int containsViataminC) {
+        this.containsViataminC = containsViataminC;
     }
 
     @Override
     public String toString() {
-        return String.format("Citrus{name = '%s', color = '%s', contains vitamin C = %d gramms}", getName(), getColor(), gramsVitaminС);
+        return String.format("name = '%s', color = '%s', contains vitamin C = %d milligramms", getName(), getColor(), containsViataminC);
     }
 
     @Override
@@ -41,11 +39,15 @@ public class Citrus extends Fruit {
         if (!(o instanceof Citrus)) return false;
         if (!super.equals(o)) return false;
         Citrus citrus = (Citrus) o;
-        return gramsVitaminС == citrus.gramsVitaminС;
+        return containsViataminC == citrus.containsViataminC;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), gramsVitaminС);
+        return Objects.hash(super.hashCode(), containsViataminC);
+    }
+
+    public int getContainsViataminC() {
+        return containsViataminC;
     }
 }

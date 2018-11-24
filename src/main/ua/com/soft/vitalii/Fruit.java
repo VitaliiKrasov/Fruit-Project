@@ -3,6 +3,7 @@ package main.ua.com.soft.vitalii;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Objects;
 
 public class Fruit {
@@ -10,8 +11,8 @@ public class Fruit {
     private Color color;
 
     public Fruit(String name, Color color) {
-        setName(name);
-        setColor(color);
+        this.name = name;
+        this.color = color;
     }
 
     public Fruit() {
@@ -27,7 +28,7 @@ public class Fruit {
 
     public void print(BufferedWriter bw) throws IOException {
         String s = this.toString();
-        bw.write(s, 0, s.length());
+        bw.write(s);
         bw.newLine();
     }
 
@@ -49,7 +50,7 @@ public class Fruit {
 
     @Override
     public String toString() {
-        return String.format("Fruit{name='%s', color=%s}", getName(), getColor());
+        return String.format("name='%s', color=%s", getName(), getColor());
     }
 
     @Override
