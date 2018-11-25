@@ -6,9 +6,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class Reader {
-    public static String[] read(InputStream in) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+    public static String[] readConsole() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         return reader.readLine().trim().split("\\s+");
     }
-
 }

@@ -2,8 +2,6 @@ package main.ua.com.soft.vitalii;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,15 +18,15 @@ import java.util.List;
  * + 2) Утворити похідний від нього клас Цитрус, який має:
  * + поле - вміст вітаміну С в грамах,
  * + конструктор з параметрами,
- * - ? властивість,
+ * + ? властивість,
  * + перевизначені методи input() та print().
  * <p>
  * + 3) Утворити List фруктів і додати до нього 5 різних фруктів і цитрусів.
  * + Видрукувати дані про ті фрукти, колір яких є 'жовтий'.
  * + Посортувати список фруктів за назвою і
- * -     результат вивести у файл
+ * +     результат вивести у файл
  * - Передбачити перехоплення виняткових ситуацій
- * - Сериалізувати-десериалізувати список у Xml форматі
+ * + Сериалізувати-десериалізувати список у Xml форматі
  * - Написати юніт-тести на методи класів
  */
 
@@ -37,8 +35,10 @@ public class Main {
     public static void main(String[] args) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Charset charset = Charset.forName("UTF-8");
-//
-//        String readMe = "Enter fruit name, color";
+
+//        final String README = "Enter the name of the fruit, color, optionally for citrus fruits - the content of vitamin C.";
+//        System.out.println(README);
+
         List<Fruit> fruits = new LinkedList<Fruit>();
         fruits.add(new Fruit("Apple", Color.yellow));
         fruits.add(new Citrus("Lemon", Color.yellow, 45));
@@ -71,7 +71,7 @@ public class Main {
 //        }
 
         try {
-            XMLtools.save(fruits);
+            XMLTools.save(fruits);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,7 +79,7 @@ public class Main {
         List<Fruit> fruits2 = new ArrayList<>();
 
         try {
-            fruits2.addAll(XMLtools.read());
+            fruits2.addAll(XMLTools.read());
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -2,13 +2,12 @@ package main.ua.com.soft.vitalii;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.Objects;
 
 public class Citrus extends Fruit {
-    private int containsViataminC;
+    private double containsViataminC;
 
-    public Citrus(String name, Color color, int vitaminC) {
+    public Citrus(String name, Color color, double vitaminC) {
         super(name, color);
         this.containsViataminC = vitaminC;
     }
@@ -21,16 +20,16 @@ public class Citrus extends Fruit {
         String[] input = br.readLine().trim().split("\\s+");
         setName(input[0]);
         setColor(Color.valueOf(input[1].toLowerCase()));
-        setContainsViataminC(Integer.parseInt(input[2]));
+        setContainsViataminC(Double.parseDouble(input[2]));
     }
 
-    public void setContainsViataminC(int containsViataminC) {
+    public void setContainsViataminC(double containsViataminC) {
         this.containsViataminC = containsViataminC;
     }
 
     @Override
     public String toString() {
-        return String.format("name = '%s', color = '%s', contains vitamin C = %d milligramms", getName(), getColor(), containsViataminC);
+        return String.format("name = '%s', color = '%s', contains vitamin C = %2f milligramms", getName(), getColor(), containsViataminC);
     }
 
     @Override
@@ -47,7 +46,7 @@ public class Citrus extends Fruit {
         return Objects.hash(super.hashCode(), containsViataminC);
     }
 
-    public int getContainsViataminC() {
+    public double getContainsViataminC() {
         return containsViataminC;
     }
 }

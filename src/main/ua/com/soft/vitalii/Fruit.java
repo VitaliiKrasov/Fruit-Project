@@ -3,7 +3,6 @@ package main.ua.com.soft.vitalii;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.Objects;
 
 public class Fruit {
@@ -20,7 +19,7 @@ public class Fruit {
 
     public void input(BufferedReader br) throws IOException, FruitException {
         String[] input = br.readLine().trim().split("\\s+");
-        if (input.length != 2) {
+        if (input.length == 2) {
             setName(input[0]);
             setColor(Color.valueOf(input[1].toLowerCase()));
         } else throw new FruitException("Wrong input");

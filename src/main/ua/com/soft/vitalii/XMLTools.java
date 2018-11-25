@@ -7,9 +7,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-public class XMLtools {
+public class XMLTools {
+    private static String file = "list_fruits.xml";
+
+    public static String getFile() {
+        return file;
+    }
+
     public static void save(List<Fruit> fruits) throws IOException {
-        FileOutputStream fos = new FileOutputStream("file_fruits.xml");
+        FileOutputStream fos = new FileOutputStream(file);
         XMLEncoder encoder = new XMLEncoder(fos);
         encoder.writeObject(fruits);
         encoder.close();
@@ -17,7 +23,7 @@ public class XMLtools {
     }
 
     public static List<Fruit> read() throws IOException {
-        FileInputStream fis = new FileInputStream("file_fruits.xml");
+        FileInputStream fis = new FileInputStream(file);
         XMLDecoder decoder = new XMLDecoder(fis);
         List<Fruit> result = (List<Fruit>) decoder.readObject();
         decoder.close();
